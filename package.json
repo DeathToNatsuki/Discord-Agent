@@ -1,0 +1,30 @@
+{
+  "name": "discord-agent",
+  "version": "1.2.0",
+  "description": "AI-powered Discord automation agent",
+  "type": "module",
+  "scripts": {
+    "dev": "node launcher.cjs",
+    "start": "node launcher.cjs",
+    "build": "vite build",
+    "build:exe": "npm run build && pkg launcher.cjs --targets node18-win-x64 --output \"Discord Agent.exe\" --compress GZip",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
+    "pkg": "^5.8.1",
+    "vite": "^5.4.0"
+  },
+  "pkg": {
+    "assets": [
+      "dist/**/*"
+    ],
+    "scripts": [],
+    "targets": ["node18-win-x64"]
+  }
+}
